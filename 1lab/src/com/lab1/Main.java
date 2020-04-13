@@ -8,13 +8,12 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String s = in.nextLine();
-        String[] splited = s.split("\\s+");
-
-        List<String> result = find(splited);
+        List<String> result = find(s);
         System.out.print(result.isEmpty() ? "Have not appropriate words" : result);
     }
 
-    public static List<String> find(String[] arr) {
+    public static List<String> find(String s) {
+        String[] arr = s.split("\\s+");
         List<String> list = new ArrayList<>();
         for (String word: arr) {
             if(isAppropriate(word))

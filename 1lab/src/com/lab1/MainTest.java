@@ -12,12 +12,18 @@ class MainTest {
     @org.junit.jupiter.api.Test
     void find() {
         String s = "Decisively advantages nor expression unpleasing she led met";
-        String[] splited = s.split("\\s+");
-
-        List<String> testArr = Main.find(splited);
+        List<String> testArr = Main.find(s);
 
         List<String> resultArr = new ArrayList<>(Arrays.asList("nor"));
 
         assertEquals(testArr, resultArr);
+    }
+
+    @org.junit.jupiter.api.Test
+    void isAppropriate(){
+        String word = "hot";
+
+        Boolean res = Main.isAppropriate(word);
+        assertTrue(res);
     }
 }
